@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ZL_LIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ZGLV">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="VERSION" type="xs:decimal" />
+							<xs:element name="DATA" type="xs:date" />
+							<xs:element name="FILENAME" type="xs:string" />
+							<xs:element name="YEAR" type="xs:unsignedShort" />
+							<xs:element name="CODE_MO" type="xs:unsignedInt" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" name="EVENT">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DISP" type="xs:string" />
+							<xs:element name="KOL_M" type="xs:unsignedByte" />
+							<xs:element name="KOL_W" type="xs:unsignedByte" />
+							<xs:element maxOccurs="unbounded" name="PERS">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="N_ZAP" type="xs:unsignedShort" />
+										<xs:element name="ID_PAC" type="xs:unsignedByte" />
+										<xs:element name="W" type="xs:unsignedByte" />
+										<xs:element name="DR" type="xs:date" />
+										<xs:element name="SMO" type="xs:unsignedInt" />
+										<xs:element name="VPOLIS" type="xs:unsignedByte" />
+										<xs:element name="NPOLIS" type="xs:unsignedLong" />
+										<xs:element minOccurs="0" name="CONTACTS">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PHONE_M" type="xs:unsignedLong" />
+													<xs:element name="ADDRESS" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="QUARTER" type="xs:unsignedByte" />
+										<xs:element name="LPU1" type="xs:unsignedByte" />
+										<xs:element name="DEPTH" type="xs:unsignedByte" />
+										<xs:element name="SS_DOC" type="xs:unsignedLong" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
